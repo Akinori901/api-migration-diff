@@ -2,6 +2,14 @@
 
 **モノリスから切り出した API が、本当に同じように動くかを検証する。**
 
+<p>
+  <img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-skill-D97757">
+  <img alt="対象" src="https://img.shields.io/badge/対象-API移行の検品-2ea44f">
+  <img alt="framework-agnostic" src="https://img.shields.io/badge/framework-Laravel_/_Django_/_Rails-6E56CF">
+  <img alt="外部依存" src="https://img.shields.io/badge/実行-コード読取のみ（旧環境不要）-555">
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-green">
+</p>
+
 移行作業で一番怖いのは、移植したつもりのエンドポイントが**静かに壊れている**ことです。
 レスポンスのキー名が変わった、フィールドが落ちた、除外条件が抜けた
 — どれもエラーにならず、画面が空欄になって初めて気づきます。
