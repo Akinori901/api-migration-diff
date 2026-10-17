@@ -1,0 +1,30 @@
+# migration-diff の設定例。プロジェクトのルートに migration.config.yml としてコピーして書き換える。
+#
+#   cp examples/migration.config.yml ./migration.config.yml
+#
+# パスは、このファイルを置いた場所からの相対パス。
+
+# 旧システム（移行元のモノリス）。1 つだけ。
+legacy:
+  name: legacy-monolith
+  path: ./legacy-monolith
+  routes: routes/api.php          # ルート定義の在り処（Django なら urls.py、Rails なら config/routes.rb）
+
+# 新システム。マイクロサービスなら複数、モジュラモノリスなら 1 つでよい。
+# エンドポイントはここに並べたサービスを横断して探す。
+services:
+  - name: auth-service
+    path: ./auth-service
+    routes: routes/api.php
+  - name: main-service
+    path: ./main-service
+    routes: routes/api.php
+
+# 任意。設定すると、欠損したレスポンスフィールドをフロントエンドが
+# 実際に使っているかまで確かめる（使用中の欠損は即修正、未使用は後回し）。
+frontend:
+  path: ./frontend
+  src: src                        # 検索する範囲（path からの相対）
+
+# レポートの出力先。{output_dir}/{yyyymmdd}/{対象}.md に書かれる。
+output_dir: docs/diff-reports
