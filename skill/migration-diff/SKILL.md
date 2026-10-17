@@ -21,7 +21,9 @@ argument-hint: 比較対象のエンドポイント（例: master/staff, orders/
 
 ## 前提
 
-`migration.config.yml` に旧・新システムの構成を書いておく（リポジトリ同梱の例を参照）。
+プロジェクトのルートの `migration.config.yml` に旧・新システムの構成を書いておく
+（[api-migration-diff](https://github.com/Akinori901/api-migration-diff) の `examples/migration.config.yml` を参照）。
+**設定ファイルが無ければ、推測で進めずに作成を促して止まる。**
 
 ```yaml
 legacy:
@@ -98,7 +100,7 @@ grep -rn "{対象パス}" {各 services[].path}/{routes}
 
 `{output_dir}/{yyyymmdd}/{対象}.md` に出力する。
 
-テンプレートは `templates/diff-report.md` を参照。
+テンプレートは、このスキルのディレクトリにある `templates/diff-report.md` を使う。
 
 ## 判断基準
 

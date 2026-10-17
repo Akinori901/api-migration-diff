@@ -18,7 +18,7 @@
 **差分を「対応が要るもの／要らないもの」に分類してレポートする**ための
 AI スキルと、その設定・出力テンプレートです。
 
-- [スキル本体（skill/SKILL.md）](skill/SKILL.md)
+- [スキル本体（skill/migration-diff/SKILL.md）](skill/migration-diff/SKILL.md)
 - [設定例（examples/migration.config.yml）](examples/migration.config.yml)
 - [レポート記入例（examples/sample-report.md）](examples/sample-report.md)
 
@@ -37,11 +37,25 @@ AI スキルと、その設定・出力テンプレートです。
 
 ## 使い方
 
-`migration.config.yml` に旧・新システムの構成を書き、
+### 1. スキルを入れる
+
+`skill/migration-diff/` を、検証したいプロジェクトの `.claude/skills/` に置きます
+（全プロジェクトで使うなら `~/.claude/skills/`）。テンプレートも同じディレクトリに入っています。
+
+```bash
+git clone https://github.com/Akinori901/api-migration-diff
+mkdir -p <対象プロジェクト>/.claude/skills
+cp -r api-migration-diff/skill/migration-diff <対象プロジェクト>/.claude/skills/
+# 更新を追いたいならコピーの代わりにシンボリックリンクでもよい
+```
+
+### 2. 設定を書いて起動する
+
+プロジェクトのルートの `migration.config.yml` に旧・新システムの構成を書き、
 エンドポイントを指定してスキルを起動します。
 
 ```bash
-cp examples/migration.config.yml ./migration.config.yml
+cp api-migration-diff/examples/migration.config.yml <対象プロジェクト>/migration.config.yml
 # 自社の構成に書き換える
 
 # Claude Code から
