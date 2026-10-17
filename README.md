@@ -21,6 +21,7 @@ AI スキルと、その設定・出力テンプレートです。
 - [スキル本体（skill/migration-diff/SKILL.md）](skill/migration-diff/SKILL.md)
 - [設定例（examples/migration.config.yml）](examples/migration.config.yml)
 - [レポート記入例（examples/sample-report.md）](examples/sample-report.md)
+- [デモ（examples/demo/）](examples/demo/) — 意図的に壊した小さな移行例。スキルを入れてすぐ試せる
 
 実際のマイクロサービス移行案件（Laravel・4サービス）で 100 本以上のレポートを
 出力しながら育てた手順を、案件固有の情報を除いて一般化したものです。

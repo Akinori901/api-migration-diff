@@ -3,3 +3,5 @@
 # examples/ の設定例まで巻き込まないよう、ルート直下だけに限る。
 /migration.config.yml
 docs/diff-reports/
+# デモを試すときに入れるスキルと出力
+examples/demo/.claude/

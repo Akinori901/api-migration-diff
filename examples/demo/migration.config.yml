@@ -1,0 +1,13 @@
+# デモ用の設定。examples/demo/ をカレントにして /migration-diff orders/list を実行する。
+legacy:
+  name: legacy-monolith
+  path: ./legacy-monolith
+  routes: routes/api.php
+services:
+  - name: main-service
+    path: ./main-service
+    routes: routes/api.php
+frontend:
+  path: ./frontend
+  src: src
+output_dir: docs/diff-reports
